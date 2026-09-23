@@ -7,29 +7,29 @@ const StatusBadge = ({ status }) => {
       case 'CONFIRMED':
       case 'ACTIVE':
       case 'Valid':
-        return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+        return 'bg-zinc-900 text-white border-zinc-900';
       case 'PENDING':
-        return 'bg-amber-100 text-amber-800 border-amber-200';
+        return 'bg-zinc-100 text-zinc-700 border-zinc-300';
       case 'REJECTED':
       case 'CANCELLED':
       case 'INACTIVE':
       case 'Expired':
-        return 'bg-rose-100 text-rose-800 border-rose-200';
+        return 'bg-zinc-200 text-zinc-900 border-zinc-400 font-bold';
       case 'CHECKED_IN':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
+        return 'bg-zinc-800 text-zinc-100 border-zinc-700';
       case 'CHECKED_OUT':
-        return 'bg-purple-100 text-purple-800 border-purple-200';
+        return 'bg-zinc-100 text-zinc-600 border-zinc-200';
       case 'COMPLETED':
-        return 'bg-indigo-100 text-indigo-800 border-indigo-200';
+        return 'bg-black text-white border-black';
       case 'MAINTENANCE':
-        return 'bg-orange-100 text-orange-800 border-orange-200';
+        return 'bg-zinc-100 text-zinc-800 border-zinc-300';
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return 'bg-zinc-100 text-zinc-800 border-zinc-200';
     }
   };
 
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getBadgeStyle(status)}`}>
+    <span className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium border ${getBadgeStyle(status)}`}>
       {status ? status.replace('_', ' ') : 'N/A'}
     </span>
   );
