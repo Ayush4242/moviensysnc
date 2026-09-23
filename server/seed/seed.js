@@ -28,7 +28,7 @@ const seedData = async () => {
 
     console.log('Cleared existing database collections.');
 
-    // 1. Create Users
+    
     const adminUser = await User.create({
       name: 'System Admin',
       email: 'admin@moviesync.com',
@@ -80,7 +80,7 @@ const seedData = async () => {
 
     console.log('Created Seed Users.');
 
-    // 2. Create Vendors
+    
     const superVendor = await Vendor.create({
       name: 'ABC Fleet Logistics',
       email: 'contact@abcfleet.com',
@@ -113,7 +113,7 @@ const seedData = async () => {
 
     console.log('Created Seed Vendors.');
 
-    // 3. Create Vehicles
+    
     const vehicle1 = await Vehicle.create({
       registrationNumber: 'PB-10-AB-1234',
       model: 'Force Traveller 14 Seater',
@@ -143,7 +143,7 @@ const seedData = async () => {
 
     console.log('Created Seed Vehicles.');
 
-    // 4. Create Drivers
+    
     const driver1 = await Driver.create({
       name: 'Rahul Sharma',
       phone: '+91 9123456789',

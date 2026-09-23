@@ -12,12 +12,12 @@ const DriversPage = () => {
   const [vehicles, setVehicles] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Modal
+
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [selectedDriverDocs, setSelectedDriverDocs] = useState(null);
   const [error, setError] = useState('');
 
-  // Form State
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -82,6 +82,7 @@ const DriversPage = () => {
   };
 
   const canManage = user?.role === 'ADMIN' || user?.role === 'SUPER_VENDOR' || user?.role === 'SUB_VENDOR';
+  const canDelete = user?.role === 'ADMIN' || user?.role === 'SUPER_VENDOR';
 
   return (
     <div className="space-y-6">
@@ -175,7 +176,7 @@ const DriversPage = () => {
                         <StatusBadge status={driver.status} />
                       </td>
                       <td className="px-6 py-4 text-right">
-                        {canManage && (
+                        {canDelete && (
                           <button
                             onClick={() => handleDeleteDriver(driver._id)}
                             className="p-1 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded transition-colors"

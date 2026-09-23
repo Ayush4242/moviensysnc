@@ -5,8 +5,8 @@ const routeSchema = new mongoose.Schema(
     name: { type: String, required: true },
     pickupPoint: { type: String, required: true },
     dropPoint: { type: String, required: true },
-    startTime: { type: String, required: true }, // Format HH:mm
-    endTime: { type: String, required: true },   // Format HH:mm
+    startTime: { type: String, required: true }, 
+    endTime: { type: String, required: true },   
   },
   { timestamps: true }
 );

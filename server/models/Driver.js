@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const documentSchema = new mongoose.Schema({
-  docType: { type: String, required: true }, // e.g. 'Driving License', 'RC', 'Permit', 'Pollution Certificate'
+  docType: { type: String, required: true },
   documentNumber: { type: String, required: true },
   expiryDate: { type: Date, required: true },
   status: { type: String, default: 'Valid' },

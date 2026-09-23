@@ -8,9 +8,9 @@ const visitorSchema = new mongoose.Schema(
     company: { type: String, required: true },
     purpose: { type: String, required: true },
     host: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    visitDate: { type: String, required: true }, // Format YYYY-MM-DD
-    startTime: { type: String, required: true }, // Format HH:mm
-    endTime: { type: String, required: true },   // Format HH:mm
+    visitDate: { type: String, required: true }, 
+    startTime: { type: String, required: true }, 
+    endTime: { type: String, required: true },   
     photo: { type: String, default: '' },
     status: {
       type: String,

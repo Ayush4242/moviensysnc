@@ -83,6 +83,7 @@ const VehiclesPage = () => {
   };
 
   const canManage = user?.role === 'ADMIN' || user?.role === 'SUPER_VENDOR' || user?.role === 'SUB_VENDOR';
+  const canDelete = user?.role === 'ADMIN' || user?.role === 'SUPER_VENDOR';
 
   return (
     <div className="space-y-6">
@@ -160,7 +161,7 @@ const VehiclesPage = () => {
                       <StatusBadge status={vehicle.status} />
                     </td>
                     <td className="px-6 py-4 text-right">
-                      {canManage && (
+                      {canDelete && (
                         <button
                           onClick={() => handleDeleteVehicle(vehicle._id)}
                           className="p-1 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded transition-colors"
