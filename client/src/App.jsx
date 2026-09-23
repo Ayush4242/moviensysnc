@@ -38,22 +38,31 @@ function AppRoutes() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<LoginPage />} />
 
+      {/* Main Protected Dashboard Container */}
       <Route
-        path="/dashboard"
         element={
           <ProtectedRoute>
             <DashboardLayout />
           </ProtectedRoute>
         }
       >
-        <Route index element={<DashboardPage />} />
-        <Route path="visitors" element={<VisitorsPage />} />
-        <Route path="vendors" element={<VendorsPage />} />
-        <Route path="drivers" element={<DriversPage />} />
-        <Route path="vehicles" element={<VehiclesPage />} />
-        <Route path="routes" element={<RoutesPage />} />
-        <Route path="bookings" element={<BookingsPage />} />
-        <Route path="schedules" element={<DriverSchedulePage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/visitors" element={<VisitorsPage />} />
+        <Route path="/vendors" element={<VendorsPage />} />
+        <Route path="/drivers" element={<DriversPage />} />
+        <Route path="/vehicles" element={<VehiclesPage />} />
+        <Route path="/routes" element={<RoutesPage />} />
+        <Route path="/bookings" element={<BookingsPage />} />
+        <Route path="/schedules" element={<DriverSchedulePage />} />
+
+        {/* Alias routes prefixed with /dashboard/ for backwards compatibility */}
+        <Route path="/dashboard/visitors" element={<VisitorsPage />} />
+        <Route path="/dashboard/vendors" element={<VendorsPage />} />
+        <Route path="/dashboard/drivers" element={<DriversPage />} />
+        <Route path="/dashboard/vehicles" element={<VehiclesPage />} />
+        <Route path="/dashboard/routes" element={<RoutesPage />} />
+        <Route path="/dashboard/bookings" element={<BookingsPage />} />
+        <Route path="/dashboard/schedules" element={<DriverSchedulePage />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
