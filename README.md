@@ -1,6 +1,6 @@
-# MovieSync - Workplace & Transport Management MVP
+# DriveHub - Enterprise Workplace & Transport Management MVP
 
-MovieSync is a clean, modern, beginner-friendly workplace and transport management dashboard designed for college/company placement assignments. It delivers a simple, functional MVP covering three core operational modules: **Visitor Management**, **Vendor / Driver / Vehicle Management**, and **Shuttle Management**.
+DriveHub is a clean, modern, beginner-friendly workplace and transport management dashboard designed for college/company placement assignments. It delivers a simple, functional MVP covering three core operational modules: **Visitor Management**, **Vendor / Driver / Vehicle Management**, and **Shuttle Management**.
 
 ---
 
@@ -16,7 +16,7 @@ MovieSync is a clean, modern, beginner-friendly workplace and transport manageme
 ## 📁 Folder Structure
 
 ```
-moviesync/
+drivehub/
 │
 ├── client/                      # Frontend Vite + React + Tailwind App
 │   ├── src/
@@ -59,12 +59,12 @@ Running the seed script pre-populates all role accounts with password `password1
 
 | Role | Email | Password | Allowed Capabilities |
 | --- | --- | --- | --- |
-| **ADMIN** | `admin@moviesync.com` | `password123` | Full access to all modules, management, approvals, check-ins & deletes |
-| **EMPLOYEE** | `employee@moviesync.com` | `password123` | Register/view visitors, create shuttle bookings, view routes |
-| **SECURITY** | `security@moviesync.com` | `password123` | View visitors list, perform Check-In and Check-Out actions |
-| **SUPER VENDOR** | `vendor@moviesync.com` | `password123` | Manage vendor hierarchy, move vendors, toggle delegation, assign drivers & vehicles |
-| **SUB VENDOR** | `subvendor@moviesync.com` | `password123` | Manage assigned drivers and vehicles |
-| **DRIVER** | `driver@moviesync.com` | `password123` | View assigned shuttle details and driver schedules |
+| **ADMIN** | `admin@drivehub.com` | `password123` | Full access to all modules, management, approvals, check-ins & deletes |
+| **EMPLOYEE** | `employee@drivehub.com` | `password123` | Register/view visitors, create shuttle bookings, view routes |
+| **SECURITY** | `security@drivehub.com` | `password123` | View visitors list, perform Check-In and Check-Out actions |
+| **SUPER VENDOR** | `vendor@drivehub.com` | `password123` | Manage vendor hierarchy, move vendors, toggle delegation, assign drivers & vehicles |
+| **SUB VENDOR** | `subvendor@drivehub.com` | `password123` | Manage assigned drivers and vehicles |
+| **DRIVER** | `driver@drivehub.com` | `password123` | View assigned shuttle details and driver schedules |
 
 ---
 
@@ -97,8 +97,8 @@ npm run dev      # Starts client on http://localhost:5173
 ### Backend (`server/.env`):
 ```env
 PORT=5000
-MONGODB_URI=mongodb://127.0.0.1:27017/moviesync
-JWT_SECRET=moviesync_jwt_secret_key_12345
+MONGODB_URI=mongodb://127.0.0.1:27017/drivehub
+JWT_SECRET=drivehub_jwt_secret_key_12345
 ```
 
 ### Frontend (`client/.env`):

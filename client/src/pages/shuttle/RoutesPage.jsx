@@ -175,7 +175,7 @@ const RoutesPage = () => {
             <input
               type="text"
               required
-              placeholder="e.g. MovieSync HQ Main Building"
+              placeholder="e.g. DriveHub Corporate HQ"
               value={formData.dropPoint}
               onChange={(e) => setFormData({ ...formData, dropPoint: e.target.value })}
               className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"

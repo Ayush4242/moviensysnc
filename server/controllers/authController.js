@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET || 'moviesync_jwt_secret_key_12345', {
+  return jwt.sign({ id }, process.env.JWT_SECRET || 'drivehub_jwt_secret_key_12345', {
     expiresIn: '30d',
   });
 };

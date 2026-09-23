@@ -63,7 +63,7 @@ const DashboardPage = () => {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-slate-900">Dashboard Overview</h1>
-        <p className="text-slate-500 text-sm">Welcome back to MovieSync Transport & Visitor Hub.</p>
+        <p className="text-slate-500 text-sm">Welcome back to DriveHub Transport & Workplace Operations Hub.</p>
       </div>
 
       {/* Cards */}

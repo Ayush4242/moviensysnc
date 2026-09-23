@@ -19,7 +19,7 @@ const ProtectedRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white font-medium">
-        Loading MovieSync...
+        Loading DriveHub...
       </div>
     );
   }

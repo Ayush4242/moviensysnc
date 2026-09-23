@@ -13,8 +13,8 @@ dotenv.config();
 
 const seedData = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/moviesync');
-    console.log('Connected to MongoDB for seeding...');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/drivehub');
+    console.log('Connected to MongoDB for seeding DriveHub...');
 
     // Clear existing data
     await User.deleteMany({});
@@ -28,62 +28,62 @@ const seedData = async () => {
 
     console.log('Cleared existing database collections.');
 
-    
+    // 1. Create Users
     const adminUser = await User.create({
       name: 'System Admin',
-      email: 'admin@moviesync.com',
+      email: 'admin@drivehub.com',
       password: 'password123',
       role: 'ADMIN',
     });
 
     const empUser1 = await User.create({
       name: 'Sarah Connor',
-      email: 'employee@moviesync.com',
+      email: 'employee@drivehub.com',
       password: 'password123',
       role: 'EMPLOYEE',
     });
 
     const empUser2 = await User.create({
       name: 'John Doe',
-      email: 'john.doe@moviesync.com',
+      email: 'john.doe@drivehub.com',
       password: 'password123',
       role: 'EMPLOYEE',
     });
 
     const securityUser = await User.create({
       name: 'Security Officer Guard',
-      email: 'security@moviesync.com',
+      email: 'security@drivehub.com',
       password: 'password123',
       role: 'SECURITY',
     });
 
     const superVendorUser = await User.create({
       name: 'Apex Fleet Manager',
-      email: 'vendor@moviesync.com',
+      email: 'vendor@drivehub.com',
       password: 'password123',
       role: 'SUPER_VENDOR',
     });
 
     await User.create({
       name: 'Sub Vendor Agent',
-      email: 'subvendor@moviesync.com',
+      email: 'subvendor@drivehub.com',
       password: 'password123',
       role: 'SUB_VENDOR',
     });
 
     const driverUser = await User.create({
       name: 'Rahul Sharma (Driver)',
-      email: 'driver@moviesync.com',
+      email: 'driver@drivehub.com',
       password: 'password123',
       role: 'DRIVER',
     });
 
     console.log('Created Seed Users.');
 
-    
+    // 2. Create Vendors
     const superVendor = await Vendor.create({
-      name: 'ABC Fleet Logistics',
-      email: 'contact@abcfleet.com',
+      name: 'Apex Global Logistics',
+      email: 'contact@apexlogistics.com',
       phone: '+91 9876543210',
       type: 'SUPER',
       parentVendor: null,
@@ -92,8 +92,8 @@ const seedData = async () => {
     });
 
     const regionalVendor = await Vendor.create({
-      name: 'Punjab Fleet Services',
-      email: 'punjab@abcfleet.com',
+      name: 'North Zone Fleet Services',
+      email: 'northzone@apexlogistics.com',
       phone: '+91 9876543211',
       type: 'REGIONAL',
       parentVendor: superVendor._id,
@@ -102,8 +102,8 @@ const seedData = async () => {
     });
 
     const cityVendor = await Vendor.create({
-      name: 'Ludhiana City Logistics',
-      email: 'ludhiana@abcfleet.com',
+      name: 'Metro City Express',
+      email: 'metrocity@apexlogistics.com',
       phone: '+91 9876543212',
       type: 'CITY',
       parentVendor: regionalVendor._id,
@@ -113,7 +113,7 @@ const seedData = async () => {
 
     console.log('Created Seed Vendors.');
 
-    
+    // 3. Create Vehicles
     const vehicle1 = await Vehicle.create({
       registrationNumber: 'PB-10-AB-1234',
       model: 'Force Traveller 14 Seater',
@@ -143,7 +143,7 @@ const seedData = async () => {
 
     console.log('Created Seed Vehicles.');
 
-    
+    // 4. Create Drivers
     const driver1 = await Driver.create({
       name: 'Rahul Sharma',
       phone: '+91 9123456789',
@@ -210,7 +210,7 @@ const seedData = async () => {
       phone: '+1 555-0199',
       email: 'robert@marvelstudios.com',
       company: 'Marvel Entertainment',
-      purpose: 'Movie Sync Tech Demo',
+      purpose: 'DriveHub Technical Audit',
       host: empUser1._id,
       visitDate: today,
       startTime: '09:30',
@@ -226,7 +226,7 @@ const seedData = async () => {
       phone: '+44 7700-9000',
       email: 'emma.watson@cinema.co.uk',
       company: 'Warner Bros',
-      purpose: 'Script Audit & Transport Review',
+      purpose: 'Fleet Infrastructure Review',
       host: empUser1._id,
       visitDate: today,
       startTime: '14:00',
@@ -241,7 +241,7 @@ const seedData = async () => {
       phone: '+1 555-0188',
       email: 'nolan@syncproductions.com',
       company: 'Syncopy Films',
-      purpose: 'Studio Location Visit',
+      purpose: 'Campus Location Visit',
       host: empUser2._id,
       visitDate: today,
       startTime: '11:00',
@@ -258,7 +258,7 @@ const seedData = async () => {
     const route1 = await Route.create({
       name: 'North Campus Shuttle',
       pickupPoint: 'North Metro Gate 2',
-      dropPoint: 'MovieSync HQ Main Building',
+      dropPoint: 'DriveHub Corporate HQ',
       startTime: '08:30',
       endTime: '09:15',
     });
@@ -266,7 +266,7 @@ const seedData = async () => {
     const route2 = await Route.create({
       name: 'South Studio Express',
       pickupPoint: 'South Residential Complex',
-      dropPoint: 'MovieSync Production Hub',
+      dropPoint: 'DriveHub Tech Hub',
       startTime: '09:00',
       endTime: '09:45',
     });
@@ -333,7 +333,7 @@ const seedData = async () => {
 
     console.log('Created Seed Schedules.');
 
-    console.log('Seed process completed successfully!');
+    console.log('DriveHub seed process completed successfully!');
     process.exit(0);
   } catch (error) {
     console.error('Error during seeding:', error);

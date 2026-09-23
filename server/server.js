@@ -32,7 +32,7 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/schedules', scheduleRoutes);
 
 app.get('/', (req, res) => {
-  res.send('MovieSync API server running');
+  res.send('DriveHub API server running');
 });
 
 // Basic 404 handler

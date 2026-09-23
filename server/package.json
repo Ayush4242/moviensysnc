@@ -1,7 +1,7 @@
 {
-  "name": "moviesync-server",
+  "name": "drivehub-server",
   "version": "1.0.0",
-  "description": "MovieSync Backend API",
+  "description": "DriveHub Backend API",
   "main": "server.js",
   "type": "module",
   "scripts": {
