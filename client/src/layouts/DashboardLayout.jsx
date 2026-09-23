@@ -40,7 +40,7 @@ const DashboardLayout = () => {
       {/* Top Navbar */}
       <header className="bg-slate-900 text-white shadow-lg sticky top-0 z-30 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
             <div className="bg-gradient-to-tr from-emerald-600 to-teal-500 p-2 rounded-xl text-white shadow-md shadow-emerald-900/30">
               <Car className="w-5 h-5" />
             </div>
